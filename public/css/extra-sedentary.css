@@ -1,0 +1,25 @@
+	.list-group-item{
+		background-color: #e4e6e7;
+		border-color: #e4e6e7;
+	}
+	
+	#sliderID .slider-selection {
+		background: #b1e0e7;
+	}
+	
+	#sliderID .slider-handle {
+		background: #17a2b8;
+	}
+
+	#next:hover {
+		background-color: white;
+		color: #007bff;
+	}
+
+	#previous:hover {
+		background-color: #6c757d;
+		color: white;
+	}
+	
+	
+		

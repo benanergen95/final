@@ -1,0 +1,197 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 0;
+}
+
+.mainCONTENT {
+	background-color: white;
+}
+
+.jumbotron {
+    background-color:transparent 50% !important; 
+}
+featurette> .headings{
+	text-align: center;
+
+}
+.av1 {
+	text-align: center;
+	color: #313F86;
+}
+.parMain{
+	text-align: left;
+}
+.parMainL{
+	text-align: center;
+}
+.test{
+	background:#00cc44;
+}
+.wleft{
+	background: #00cc44;
+	float: left;
+	width: 49%;
+	padding-right: 10em;
+}
+.picTest{
+	height:40%;
+	width:40%;
+	position:center;
+}
+.picScale{
+	height:40%;
+	width:40%;
+	position:left;
+}
+.picScale2{
+	height:35%;
+	width:35%;
+	position:right;
+}
+.picScale3{
+	height:50%;
+	width:50%;
+	position:right;
+}
+.picScale4{
+	height:75%;
+	width:75%;
+	position:right;
+}
+/*
+Tears
+.sm{
+	color:#00cc44;
+}
+*/
+.wRight{
+	background:#d633ff;
+	float: left;
+	width: 49%;
+}
+ .btn-tears{
+ color:#fff;
+ background-color:#d633ff;
+ border-color:#cc00ff
+ }
+ .btn-tears:hover{
+ color:#fff;
+ background-color:#d966ff;
+ border-color:#cc33ff
+ }
+ .btn-tears.focus,.btn-tears:focus{
+  box-shadow:0 0 0 .2rem rgba(217,102,255,.5)
+ }
+ .btn-outline-tears{
+	 color:#cc00ff;
+	 background-color:transparent;
+	 background-image:none;
+	 border-color:#cc00ff
+	 }
+.btn-outline-tears:hover{
+	color:#cc00ff;
+	background-color:#6c757d;
+	border-color:#cc00ff
+	}
+.bg-tears{
+	 background-color:#d966ff;
+	}
+ 
+ .fAlert{
+	position:relative;
+	padding:.75rem 1.25rem;
+	margin-bottom:1rem;
+	border:1px solid transparent;
+	border-radius:.25rem;
+	text-align: center;
+ }
+ 
+ 
+.alert-Tears{
+ color:#004085;
+ background-color:#80ff80;
+ border-color:#b8daff
+ }
+.alert-colBox{
+ color:#f2f2f2;
+ background-color:#3399ff;
+ border-color:#b8daff
+ }
+ .alert-colBox1{
+ color:#f2f2f2;
+ background-color: #ff4d4d;
+ border-color:#b8daff;
+ }
+ .alert-colBox2{
+ color:#f2f2f2;
+ background-color:#00b33c;
+ border-color:#b8daff
+ }
+ 
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+ .BOXtears{
+ padding:2rem 1rem;
+ margin-bottom:2rem;
+ background-color:#ffffff;
+ border-radius:.3rem
+ }
+  .BOXtears2{
+ padding: 1rem 1rem ;
+ margin-bottom:2rem;
+ background-color:#ffffff;
+ border-radius:.3rem;
+ border-color: #33cc33; 
+ }
+ @media (min-width:576px){.BOXtears{padding:4rem 2rem}}
+ .BOXtears-fluid{
+ padding-right:0;
+ padding-left:0;
+ border-radius:0
+ }
+
+.gender {
+    height: 50%;
+    width: 50%;
+    margin: 10px;
+}
+
+brn-group {
+    overflow-y: scroll;
+}
+ 
+ .navbar-dark .navbar-nav .nav-link:focus,.navbar-dark .navbar-nav .nav-link:hover{
+ color:rgba(0, 102, 255,.75)
+ }
+
+
+ code {
+	font-size: 80%;
+  }
+

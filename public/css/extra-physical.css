@@ -1,0 +1,22 @@
+	
+	#sliderID .slider-selection {
+		background: #ec939c;
+	}
+	
+	#sliderID .slider-handle {
+		background: #dc3545;
+	}
+
+	
+
+	#next:hover {
+		background-color: white;
+		color: #007bff;
+	}
+
+	#previous:hover {
+		background-color: #6c757d;
+		color: white;
+	}
+	
+		

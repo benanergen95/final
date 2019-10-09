@@ -1,0 +1,119 @@
+@extends('layouts.app')
+@section('navigation')
+    @include ('layouts.navNotAuth')
+@endsection
+
+
+@section('content')
+    @if(isset(Auth::user()->email))
+        <script>window.location = "Tests";</script>
+    @endif
+    <div class="jumbotron bg-white rounded-top rounded-bottom border border-secondry mx-2">
+        <h2 class="av1">Healthy Start<span class="text-muted"></span></h2>
+
+        <hr>
+
+        <form action="{{url('Register')}}" method="post">
+            {{csrf_field()}}
+            <div class="parMain">
+                <p class="text-center">To begin your journey firstly we will need a few things from you. Please answer
+                    the questions and fill out the fields. </p>
+                <hr>
+                <!--Error Message-->
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">
+                        </button>
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if(null !== $message = Session::get('error'))
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">
+                        </button>
+                        <ul>
+                            <li>{{$message}}</li>
+                        </ul>
+                    </div>
+                @endif
+
+                <div class="form-group">
+
+                    <!-- First Name INPUT-->
+                    <label for="exampleFormControlInput1">Please enter your First Name</label>
+                    <input name="firstname" type="text" class="form-control" id="FormControlInput1"
+                           placeholder="First Name" value="{{ old('firstname') }}">
+
+                    <!-- Last Name INPUT-->
+                    <label for="exampleFormControlInput1">Please enter your Last Name</label>
+                    <input name="lastname" type="text" class="form-control" id="FormControlInput2"
+                           placeholder="Last Name" value="{{ old('lastname') }}">
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- User Type Input -->
+                    <p class="">Are you a?</p>
+                    <div>
+                        <input type="radio" name="type" id="option1" autocomplete="off" onclick="myFunction()"
+                               value="Mum"> Mum
+
+                        <input type="radio" name="type" id="option2" autocomplete="off" onclick="myFunction()"
+                               value="Dad"> Dad
+
+                        <input type="radio" name="type" id="option3" autocomplete="off" onclick="myFunction()"
+                               value="Other"> Other
+                    </div>
+
+                    <!-- Other User Type Input-->
+                    <div id="myP" style="display:none;">
+                        <label for="exampleFormControlInput1">Please specify</label>
+                        <input type="text" name='other-type' class="form-control" id="FormControlInput3"
+                               placeholder="If we require a text field for this it will only come up when the parent selected other." value="{{ old('other-type') }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Email Input-->
+                    <label for="exampleInputEmail1">Email Address:</label>
+                    <input type="email" name="email" class="form-control" id="FormControlInput4"
+                           aria-describedby="emailHelp" placeholder="Email@example.com" value="{{ old('email') }}">
+                </div>
+                <div class="form-group">
+                    <!-- Password Input-->
+                    <label>Password:</label>
+                    <input type="password" name="password" class="form-control" id="FormControlInput5"
+                           placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label>Password Confirmation:</label>
+                    <input type="password" name="password_confirmation" class="form-control" id="FormControlInput5"
+                           placeholder="Confirm Password">
+                </div>
+
+            </div>
+            <div class="av1">
+                <input type="submit" value="Submit" class="btn btn-success">
+                <!--<a href="WhyUse" type="button" class="btn btn-success">Proceed</a>-->
+            </div>
+            <hr>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function myFunction() {
+
+            if (document.getElementById("option3").checked) {
+                document.getElementById("myP").style.display = "block";
+            }
+            else {
+                document.getElementById("myP").style.display = "none";
+            }
+        }
+    </script>
+
+
+@endsection

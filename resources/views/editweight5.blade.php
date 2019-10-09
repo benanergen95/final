@@ -1,0 +1,92 @@
+@extends('layouts.appAdmin')
+@section('navigation')
+    @include ('layouts.navAdmin')
+@endsection
+
+@section('content')
+    @include ('layouts.navAdminedit')
+
+    @if(!isset(Auth::user()->email))
+        <script>window.location = "Login";</script>
+    @endif
+    @if(Auth::user()->admin == 0)
+        <script>window.location = "Tests";</script>
+    @endif
+    <!-- Begin page content -->
+    <!-- summernote -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+    <div class="BOXtears">
+        <h2 class="text-center">Weight 5 Page<span class="text-muted"></span></h2>
+        <hr>
+        @php
+            $data=DB::table('summernotes')->where("item_id","=",19)->value('content'); //main line
+            $data1=DB::table('summernotes')->where("item_id","=",20)->value('content'); //well done
+            $data2=DB::table('summernotes')->where("item_id","=",21)->value('content'); //normal
+            $data3=DB::table('summernotes')->where("item_id","=",22)->value('content');//getting there
+            $data4=DB::table('summernotes')->where("item_id","=",23)->value('content'); //underweight
+            $data5=DB::table('summernotes')->where("item_id","=",24)->value('content');//getting there
+            $data6=DB::table('summernotes')->where("item_id","=",25)->value('content'); //overweight
+            $data7=DB::table('summernotes')->where("item_id","=",42)->value('content'); //good image
+            $data8=DB::table('summernotes')->where("item_id","=",43)->value('content'); //ng image
+        @endphp
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="pannel-heading">
+                </div>
+                <div class="panel-body">
+                    <form action="{{ url('editweight5') }}" method="post">
+                        <div class="text-center">
+                            <p class="text-center"><b>Main message : </b></p> Well done! John
+                            <input type="text" name="main" value="{{ $data }}"> normal weight.
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <p class="text-center"><b>If normal message : </b></p>
+                            <input type="text" name="ifnorf" value="{{ $data1 }}"> John {{ $data }}
+                            <input type="text" name="ifnotl" value="{{ $data2 }}">
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <p class="text-center"><b>If under weight message : </b></p>
+                            <input type="text" name="ifwnf" value="{{ $data3 }}"> John {{ $data }}
+                            <input type="text" name="ifwnl" value="{{ $data4 }}">
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <p class="text-center"><b>If over weight message : </b></p>
+                            <input type="text" name="ifovf" value="{{ $data5 }}"> John {{ $data }}
+                            <input type="text" name="ifovl" value="{{ $data6 }}">
+                        </div>
+                        <hr>
+                        <p>Child name = John (will be replaced by the child name)</p>
+                        Image if BMI is classified as normal
+                        <textarea id="summernote" name="imggood" class="form-control">
+                  {!! $data7 !!}
+                </textarea>
+                        Image if BMI is calssified as not normal
+                        <textarea id="summernote1" name="imgngood" class="form-control">
+                  {!! $data8 !!}
+            </textarea>
+                        <div class="av1">
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    {!!csrf_field()!!}
+                </div>
+                </form>
+                <script>
+                    $('#summernote').summernote({
+                        tabsize: 2,
+                        height: 500
+                    });
+                    $('#summernote1').summernote({
+                        tabsize: 2,
+                        height: 500
+                    });
+                </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+@endsection
